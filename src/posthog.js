@@ -23,6 +23,10 @@ export function initPostHog() {
                 // Heatmaps (via toolbar)
                 heatmaps: true,
             })
+
+            // EXPOSE TO WINDOW FOR TOOLBAR 
+            window.posthog = posthog;
+
             console.log('PostHog initialized for Kasparro');
         } else {
             console.warn('PostHog API Key not found. Please set VITE_POSTHOG_KEY in .env');
